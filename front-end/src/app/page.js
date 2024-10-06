@@ -21,12 +21,16 @@ export default function Home() {
       </p> */}
         {/* Sign In and Log In Buttons */}
         <div className="absolute bottom-20 right-20 z-10 flex space-x-4">
-        <button className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition">
-          Sign In
-        </button>
-        <button className="bg-white text-purple-500 px-4 py-2 rounded border border-purple-500 hover:bg-purple-500 hover:text-white transition">
-          Log In
-        </button>
+        <a href="/signin">
+          <button className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition">
+            Sign In
+          </button>
+        </a>
+        <a href="/login">
+          <button className="bg-white text-purple-500 px-4 py-2 rounded border border-purple-500 hover:bg-purple-500 hover:text-white transition">
+            Log In
+          </button>
+        </a>
       </div>
     </div>
   );

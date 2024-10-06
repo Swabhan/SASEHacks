@@ -1,24 +1,76 @@
-.timebank-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Full height of the viewport */
+  background-image: url('/city.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-
-.header-section {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.8); /* Optional: white background with opacity for header */
+.timebank-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners for a modern look */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 .title-section {
-  width: 100%;
+  text-align: center;
+  margin-bottom: 40px; /* Increased spacing for better readability */
+}
+
+.title {
+  font-size: 32px; /* Larger font size for a prominent title */
+  font-weight: bold;
+  color: #222222; /* Darker color for better contrast */
+  font-family: 'YourCustomFont', sans-serif; /* Custom font */
+}
+
+.highlight {
+  color: #007bff;
+  font-weight: bold;
+  font-family: 'YourCustomFontBold', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.highlight:hover {
+  color: #0056b3; /* Darker blue on hover */
+  text-decoration: underline; /* Underline for hover effect */
 }
 
 .form-section {
-  width: 80%; /* Adjust width as necessary */
-  max-width: 600px; /* Limit the max width */
+  margin-bottom: 40px;
 }
 
 .activity-list-section {
-  width: 80%; /* Adjust width as necessary */
-  max-width: 600px; /* Limit the max width */
+  margin-top: 40px;
+}
+
+/* Button styling */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .timebank-container {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
 }

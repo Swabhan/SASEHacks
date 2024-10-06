@@ -11,13 +11,13 @@ export default function ActivityList() {
   ];
 
   return (
-    <div className="activity-list bg-purple-300 p-3 rounded-lg shadow-lg">
-      <h3 className="text-blue-800 text-2xl font-semibold mb-4">Available Activities</h3>
+    <div className="activity-list bg-white bg-opacity-30 backdrop-blur-lg p-6 rounded-lg shadow-lg mb-8"> {/* Adjusted background for transparency */}
+      <h3 className="text-blue-300 text-4xl font-semibold mb-4">Available Activities</h3>
       <ul className="list-disc pl-5">
         {activities.map((activity) => (
-          <li key={activity.name} className="text-blue-900 mb-2">
+          <li key={activity.name} className="text-blue-300 mb-2"> {/* Adjusted text color */}
             <Link href={`/timebank/${activity.name.replace(/\s+/g, '-').toLowerCase()}/${userId}`}>
-              {activity.name}
+              <span className="hover:underline">{activity.name}</span> {/* Added hover effect */}
             </Link>
           </li>
         ))}
