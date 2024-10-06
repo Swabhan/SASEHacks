@@ -1,0 +1,24 @@
+.timebank-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-section {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8); /* Optional: white background with opacity for header */
+}
+
+.title-section {
+  width: 100%;
+}
+
+.form-section {
+  width: 80%; /* Adjust width as necessary */
+  max-width: 600px; /* Limit the max width */
+}
+
+.activity-list-section {
+  width: 80%; /* Adjust width as necessary */
+  max-width: 600px; /* Limit the max width */
+}
