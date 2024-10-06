@@ -85,7 +85,7 @@ let network = {
         "Communities": {
             "School": [],
             "Improve": [],
-            "Everyone": []
+            "Everyone": ["56789"]
         },
         "Help Needed": [],
         "Helping": [],
@@ -121,7 +121,7 @@ let network = {
             "Improve": [],
             "Everyone": []
         },
-        "Help Needed": [],
+        "Help Needed": [{"Title": "req.body.title", "Description": "req.body.description", "Estimated Hours": "req.body.hours"}],
         "Helping": [],
         "Helped": [],
         "Hours": 0,
@@ -175,6 +175,10 @@ app.post('/connect/:userId-:userId2-:community', (req, res) => {
 })
 
 
+//------------------
+//Recommend Activity
+//------------------
+
 function parseStringToArray(inputString) {
     // Remove leading and trailing brackets and split into rows
     let cleanedString = inputString.trim().replace(/^\[|\]$/g, '');
@@ -224,6 +228,22 @@ function topRecs(inputList) {
     console.log(avg)
 };
 
+function buildMatrix(group){
+    let matrix = []
+
+    for(let i = 0; i < group.length; i++){
+        let row = []
+
+        for(let x = 0; x < interests.length; x++){
+            let rating = network[group[i]]["Interests"][interests[x]]
+            row.push(rating)
+        }
+
+        matrix.push(row)
+    }
+
+    return matrix
+}
 
 //Recommend Activities
 app.post('/recommend', (req, res) => {
@@ -285,43 +305,19 @@ app.post('/helped/:userId-:userId2', (req, res) => {
     
     network[req.params.userId]["Hours"] += req.body.hours
     network[req.params.userId2]["Hours"] -= req.body.hours
-
 })
 
-function buildMatrix(group){
-    let matrix = []
+app.get('/help/:userId', (req, res) => {
+    let people = network[req.params.userId]["Communities"]["Everyone"];
 
-    for(let i = 0; i < group.length; i++){
-        let row = []
+    let opportunities = []
 
-        for(let x = 0; x < interests.length; x++){
-            let rating = network[group[i]]["Interests"][interests[x]]
-            row.push(rating)
-        }
-
-        matrix.push(row)
+    for(let i = 0; i < people.length; i++){
+        opportunities = [...opportunities, ...network[people[i]]["Help Needed"]]
     }
 
-    return matrix
-}
-
-function DotProduct(A, B) {
-    const result = [];
-    
-    for (let i = 0; i < A.length; i++) {
-        result[i] = new Array(B[0].length).fill(0);
-    }
-    
-    for (let i = 0; i < A.length; i++) {
-        for (let j = 0; j < B[0].length; j++) {
-            for (let k = 0; k < A[0].length; k++) {
-                result[i][j] += A[i][k] * B[k][j];
-            }
-        }
-    }
-    
-    return result;
-}
+    res.send(opportunities)
+})
 
 app.listen(port, () => {
   console.log(`SASEHacks listening on port ${port}`)
