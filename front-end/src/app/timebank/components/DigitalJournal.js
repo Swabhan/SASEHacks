@@ -47,10 +47,10 @@ export default function DigitalJournal() {
   };
 
   return (
-    <div className="journal-container backdrop-blur-lg flex flex-col rounded-lg">
+    <div className="journal-container bg-opacity-50  bg-black p-6 rounded-lg shadow-lg mb-8">
       {/* Daily Prompt */}
       <h2 className="text-blue-300 bg-opacity-50 text-4xl font-semibold mb-4 rounded-lg shadow-lg mt-4">
-        Your<span className="text-blue-900 font-bold px-4 py-1 inline-block"> Digital Journal</span>
+        Your<span className="text-white font-bold px-4 py-1 inline-block">Digital Journal</span>
       </h2>
       <p className="text-lg bg-blue-900 rounded-lg text-center mb-4">
         What are you grateful for today?
@@ -65,7 +65,7 @@ export default function DigitalJournal() {
           placeholder="Type your answer here..."
           className="text-black border border-black rounded p-2 w-full mb-4"
         />
-        <button type="submit" className="bg-purple-500 text-white font-bold py-2 px-4 rounded">
+        <button type="submit" className="bg-blue-500 text-white font-bold py-2 px-4 rounded">
           Submit
         </button>
       </form>
@@ -92,13 +92,13 @@ export default function DigitalJournal() {
           {/* Camera Section */}
           <div className="flex flex-col mb-4">
             {!isCameraActive ? (
-              <button onClick={startCamera} className="bg-purple-500 text-white py-2 px-4 rounded mb-2">
+              <button onClick={startCamera} className="bg-blue-500 text-white py-2 px-4 rounded mb-2">
                 Open Camera
               </button>
             ) : (
               <div>
                 <video ref={videoRef} autoPlay className="border border-gray-300 rounded mb-2" />
-                <button onClick={capturePhoto} className="bg-purple-500 text-white py-2 px-4 rounded mb-2">
+                <button onClick={capturePhoto} className="bg-blue-500 text-white py-2 px-4 rounded mb-2">
                   Take Photo
                 </button>
                 <canvas ref={canvasRef} style={{ display: 'none' }} />
@@ -130,7 +130,7 @@ export default function DigitalJournal() {
           )}
 
           <button 
-            className="bg-purple-500 text-white font-bold py-2 px-4 rounded"
+            className="bg-blue-500 text-white font-bold py-2 px-4 rounded"
             onClick={() => alert('Journal saved!')}
           >
             Save Journal Entry

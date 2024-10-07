@@ -11,7 +11,7 @@ export default function ActivityList() {
   ];
 
   return (
-    <div className="activity-list bg-white bg-opacity-30 backdrop-blur-lg p-6 rounded-lg shadow-lg mb-8"> {/* Adjusted background for transparency */}
+    <div className="activity-list bg-opacity-50  bg-black p-6 rounded-lg shadow-lg mb-8"> {/* Adjusted background for transparency */}
       <h3 className="text-blue-300 text-4xl font-semibold mb-4">Available Activities</h3>
       <ul className="list-disc pl-5">
         {activities.map((activity) => (

@@ -11,8 +11,8 @@ export default function TimeBank() {
       
       {/* Header Section */}
       <header className="title-section">
-      <h2 className="text-3xl text-black  md:text-5xl bg-opacity-30 backdrop-blur-lg text-black font-bold leading-tight">
-        Welcome to<span className=" text-blue-900 font-bold px-3 py-1 inline-block">
+      <h2 className="text-3xl text-black  md:text-5xl bg-opacity-50  bg-black border-white text-blue-700 font-bold leading-tight">
+        Welcome to<span className=" text-blue-300 font-bold px-3 py-1 inline-block">
           Time Bank
         </span>
       </h2>

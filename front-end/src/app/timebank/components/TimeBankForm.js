@@ -10,7 +10,7 @@ export default function TimeBankForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="activity-form rounded-lg shadow-lg bg-white bg-opacity-30 backdrop-blur-lg p-6 mx-auto mt-16">
+    <form onSubmit={handleSubmit} className="activity-form rounded-lg shadow-lg bg-opacity-50  bg-black p-6 mx-auto mt-16">
       <h3 className="text-white text-4xl font-bold mb-6 py-2 px-4 rounded-lg"> {/* Background and shadow for emphasis */}
         Add <span className="text-blue-300">Your Activity</span>
       </h3>

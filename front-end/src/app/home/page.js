@@ -16,7 +16,7 @@ export default function Home() {
               COMMUNITY BANK
             </span>
           </h1>
-          <p className="text-lg text-white mt-4 bg-purple-600 p-4 shadow-md rounded-lg font-cursive w-full max-w-2xl">
+          <p className="text-lg text-white mt-10 bg-purple-600 p-4 shadow-md rounded-lg font-cursive w-full max-w-2xl">
             <span className="text-green-500">Trade your time, not your money</span>. 
             <span className="text-yellow-500">Strengthen</span> your community by connecting and helping friends with 
             <span className="text--500">skills</span> that matter. 
@@ -32,14 +32,14 @@ export default function Home() {
         {/* Buttons at the Bottom */}
         <div className="relative z-10 mb-8 flex flex-col sm:flex-row items-center justify-center w-full gap-5">
           <a
-            className="flex-1 rounded-full border border-purple-900 text-white  py-3 text-base sm:text-lg text-center transition-colors hover:bg-purple-700"
+            className="flex-1 rounded-full bg-purple-900 border-purple-900 text-white  py-3 text-base sm:text-lg text-center transition-colors hover:bg-purple-700"
             href="/timebank"
           >
             Time Bank
           </a>
           <div className="h-0.5 w-full sm:w-auto bg-purple-200 sm:h-full sm:w-0.5"></div>
           <a
-            className="flex-1 rounded-full border border-purple-900 bg-purple-900 text-white py-3 text-base sm:text-lg text-center transition-colors hover: bg-transparent"
+            className="flex-1 rounded-full bg-purple-900 border-purple-900 text-white  py-3 text-base sm:text-lg text-center transition-colors hover:bg-purple-700"
             href="/community"
           >
             Connect with Your Community
